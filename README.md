@@ -60,7 +60,7 @@ This lab demonstrates **Server-Side Expression Injection (SSEI)**, which can be 
 ### Step 1: Build the Docker Image
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/ssei-lab.git
+git clone https://github.com/D0tP1r4t3/dotpirate-vuln-labs.git
 cd ssei-lab
 sudo docker build -t ssei-lab .
 ```
